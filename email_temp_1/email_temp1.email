@@ -1,0 +1,16 @@
+<messaging:emailTemplate subject="Thank you" recipientType="User" relatedToType="ExpenceMember__c">
+<messaging:attachment renderAs="PDF" filename="Invoice.pdf">
+    <html>
+        <head/>
+        <body>
+            Hi <b>{!relatedTo.Member__r.First_Name__c}</b>
+                Thanks for the Contribution for {!relatedTo.Expence__r.Event__c} and  you contributed  {!relatedTo.ContribAmount__c} 
+                and the defined amount for the event is {!relatedTo.Expence__r.Amount__c} on the date of{!relatedTo.Expence__r.date__c}.
+        </body>
+    </html>
+</messaging:attachment>
+<messaging:plainTextEmailBody >
+Congratulations! {!relatedTo.Name}
+This is your new Visualforce Email Template.
+</messaging:plainTextEmailBody>
+</messaging:emailTemplate>
